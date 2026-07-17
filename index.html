@@ -66,9 +66,7 @@
       --gold: #d5a94f;
       --gold-light: #f0d58c;
       --cream: #f7f0df;
-      --ink: #172326;
       --rose: #8f2944;
-      --shadow: rgba(0, 0, 0, 0.22);
     }
 
     * {
@@ -102,7 +100,7 @@
       justify-content: space-between;
       gap: 2rem;
       padding: 1rem clamp(1.25rem, 5vw, 5rem);
-      background: rgba(3, 20, 23, 0.9);
+      background: rgba(3, 20, 23, 0.92);
       border-bottom: 1px solid rgba(213, 169, 79, 0.35);
       backdrop-filter: blur(12px);
     }
@@ -134,48 +132,68 @@
       color: var(--gold-light);
     }
 
-    .hero {padding: 6rem 2rem 5rem;
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      place-items: center;
+      padding: 4.5rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: visible;
+    }
 
-   .hero::before {
-  content: "";
-  position: absolute;
-  width: min(52rem, 94vw);
-  height: min(52rem, 94vw);
-  border: 1px solid rgba(213, 169, 79, 0.16);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 1.4rem rgba(213, 169, 79, 0.025),
-    0 0 9rem rgba(24, 119, 123, 0.12);
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: min(52rem, 94vw);
+      height: min(52rem, 94vw);
+      border: 1px solid rgba(213, 169, 79, 0.14);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 1.4rem rgba(213, 169, 79, 0.02),
+        0 0 9rem rgba(24, 119, 123, 0.1);
+      pointer-events: none;
+    }
 
-   .hero-content {
-  max-width: 900px;
-  position: relative;
-  z-index: 1;
-  padding-top: 1rem;
-}
+    .hero-content {
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo {
+      display: block;
+      width: min(460px, 78vw);
+      height: auto;
+      margin: 0 auto 1.25rem;
+      border-radius: 50%;
+      filter:
+        drop-shadow(0 1.5rem 2.8rem rgba(0, 0, 0, 0.34))
+        drop-shadow(0 0 1.25rem rgba(213, 169, 79, 0.12));
+    }
 
     .eyebrow {
-  margin: 0 0 0.75rem;
-  color: var(--gold);
-  font-size: 0.85rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
+      margin: 0 0 0.75rem;
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
 
-   h1 {
-  margin: 0;
-  color: var(--gold-light);
-  font-size: clamp(4.2rem, 11vw, 8.5rem);
-  font-weight: 500;
-  line-height: 0.92;
-  text-shadow:
-    0 0.35rem 1.5rem rgba(0, 0, 0, 0.25),
-    0 0 0.8rem rgba(240, 213, 140, 0.12);
-}
+    h1 {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: clamp(4rem, 10vw, 7.5rem);
+      font-weight: 500;
+      line-height: 0.95;
+      text-shadow:
+        0 0.35rem 1.5rem rgba(0, 0, 0, 0.25),
+        0 0 0.8rem rgba(240, 213, 140, 0.12);
+    }
 
     .artist-name {
-      margin: 1.5rem 0 0;
+      margin: 1.4rem 0 0;
       color: var(--cream);
       font-size: clamp(1.15rem, 3vw, 1.8rem);
       letter-spacing: 0.18em;
@@ -183,7 +201,7 @@
     }
 
     .tagline {
-      margin: 2rem auto 0;
+      margin: 1.75rem auto 0;
       max-width: 720px;
       color: var(--gold-light);
       font-size: clamp(1.3rem, 3vw, 2rem);
@@ -434,20 +452,14 @@
       }
 
       .hero {
-        min-height: 82vh;
+        min-height: auto;
+        padding-top: 3rem;
       }
-    }.hero-logo {
-    width: 420px;
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto 3rem;
-}
-  border-radius: 50%;
-  filter:
-    drop-shadow(0 1.5rem 2.8rem rgba(0, 0, 0, 0.34))
-    drop-shadow(0 0 1.25rem rgba(213, 169, 79, 0.12));
-}
+
+      .hero-logo {
+        width: min(360px, 86vw);
+      }
+    }
   </style>
 </head>
 
@@ -465,11 +477,13 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-content"><img
-  src="master-logo.png.png"
-  alt="A Roses Art emblem featuring a Southwestern sunrise, compass, roses, and art tools"
-  class="hero-logo"
->
+      <div class="hero-content">
+        <img
+          src="master-logo.png"
+          alt="A Roses Art emblem featuring a Southwestern sunrise, compass, roses, and art tools"
+          class="hero-logo"
+        >
+
         <p class="eyebrow">The Fine Art of Alexandria Roses</p>
 
         <h1>A Roses Art</h1>
