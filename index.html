@@ -144,40 +144,42 @@
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: min(46rem, 90vw);
-      height: min(46rem, 90vw);
-      border: 1px solid rgba(213, 169, 79, 0.28);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 1.25rem rgba(213, 169, 79, 0.04),
-        0 0 8rem rgba(24, 119, 123, 0.17);
-    }
+   .hero::before {
+  content: "";
+  position: absolute;
+  width: min(52rem, 94vw);
+  height: min(52rem, 94vw);
+  border: 1px solid rgba(213, 169, 79, 0.16);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1.4rem rgba(213, 169, 79, 0.025),
+    0 0 9rem rgba(24, 119, 123, 0.12);
+}
 
-    .hero-content {
-      max-width: 850px;
-      position: relative;
-      z-index: 1;
-    }
+   .hero-content {
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+  padding-top: 1rem;
+}
 
-    .eyebrow {
-      margin: 0 0 1rem;
+    .eyebrow margin: 0 0 0.75rem;
       color: var(--gold);
       font-size: 0.85rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 0;
-      color: var(--gold-light);
-      font-size: clamp(3.6rem, 11vw, 8rem);
-      font-weight: 500;
-      line-height: 0.95;
-      text-shadow: 0 0.35rem 1.5rem var(--shadow);
-    }
+   h1 {
+  margin: 0;
+  color: var(--gold-light);
+  font-size: clamp(4.2rem, 11vw, 8.5rem);
+  font-weight: 500;
+  line-height: 0.92;
+  text-shadow:
+    0 0.35rem 1.5rem rgba(0, 0, 0, 0.25),
+    0 0 0.8rem rgba(240, 213, 140, 0.12);
+}
 
     .artist-name {
       margin: 1.5rem 0 0;
@@ -443,11 +445,13 @@
       }
     }.hero-logo {
   display: block;
-  width: min(430px, 82vw);
+  width: min(460px, 78vw);
   height: auto;
-  margin: 0 auto 2rem;
+  margin: -1rem auto 1.25rem;
   border-radius: 50%;
-  filter: drop-shadow(0 1.25rem 2.5rem rgba(0, 0, 0, 0.38));
+  filter:
+    drop-shadow(0 1.5rem 2.8rem rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 1.25rem rgba(213, 169, 79, 0.12));
 }
   </style>
 </head>
@@ -467,8 +471,8 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-content"><img
-  src="ChatGPT Image Jul 17, 2026, 03_09_34 AM.png"
-  alt="A Roses Art master logo for Alexandria Roses"
+  src="master-logo.png"
+  alt="A Roses Art emblem featuring a Southwestern sunrise, compass, roses, and art tools"
   class="hero-logo"
 >
         <p class="eyebrow">The Fine Art of Alexandria Roses</p>
