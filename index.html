@@ -3,17 +3,587 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Roses Art</title>
+
+  <title>A Roses Art | Original Fine Art by Alexandria Roses</title>
+
+  <meta
+    name="description"
+    content="Explore A Roses Art, the online gallery of Alexandria Roses. Discover original underwater, Southwestern, celestial and imaginative artwork created through a magical lens."
+  >
+
+  <meta name="author" content="Alexandria Roses">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arosesart.com/">
+
+  <meta property="og:title" content="A Roses Art | The Fine Art of Alexandria Roses">
+  <meta
+    property="og:description"
+    content="Original artwork inspired by nature, imagination and the extraordinary hidden within the ordinary."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arosesart.com/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://arosesart.com/#alexandria-roses",
+        "name": "Alexandria Roses",
+        "url": "https://arosesart.com/",
+        "jobTitle": "Artist",
+        "description": "Alexandria Roses is the artist behind A Roses Art."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://arosesart.com/#organization",
+        "name": "A Roses Art",
+        "url": "https://arosesart.com/",
+        "founder": {
+          "@id": "https://arosesart.com/#alexandria-roses"
+        },
+        "description": "The online fine-art gallery of Alexandria Roses."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://arosesart.com/#website",
+        "url": "https://arosesart.com/",
+        "name": "A Roses Art",
+        "publisher": {
+          "@id": "https://arosesart.com/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --teal-dark: #071f24;
+      --teal: #0b4b50;
+      --teal-light: #18777b;
+      --gold: #d5a94f;
+      --gold-light: #f0d58c;
+      --cream: #f7f0df;
+      --ink: #172326;
+      --rose: #8f2944;
+      --shadow: rgba(0, 0, 0, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 50% 10%, rgba(24, 119, 123, 0.25), transparent 34rem),
+        linear-gradient(150deg, #031417 0%, var(--teal-dark) 48%, #020a0c 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1rem clamp(1.25rem, 5vw, 5rem);
+      background: rgba(3, 20, 23, 0.9);
+      border-bottom: 1px solid rgba(213, 169, 79, 0.35);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      color: var(--gold-light);
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.35rem;
+    }
+
+    .navigation a {
+      color: var(--cream);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .navigation a:hover,
+    .navigation a:focus-visible {
+      color: var(--gold-light);
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      place-items: center;
+      padding: 6rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: min(46rem, 90vw);
+      height: min(46rem, 90vw);
+      border: 1px solid rgba(213, 169, 79, 0.28);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 1.25rem rgba(213, 169, 79, 0.04),
+        0 0 8rem rgba(24, 119, 123, 0.17);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: clamp(3.6rem, 11vw, 8rem);
+      font-weight: 500;
+      line-height: 0.95;
+      text-shadow: 0 0.35rem 1.5rem var(--shadow);
+    }
+
+    .artist-name {
+      margin: 1.5rem 0 0;
+      color: var(--cream);
+      font-size: clamp(1.15rem, 3vw, 1.8rem);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      margin: 2rem auto 0;
+      max-width: 720px;
+      color: var(--gold-light);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-style: italic;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 1.5rem auto 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      min-width: 11rem;
+      padding: 0.9rem 1.4rem;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      color: var(--teal-dark);
+      background: var(--gold-light);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .button.secondary {
+      color: var(--gold-light);
+      background: transparent;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: var(--cream);
+    }
+
+    .section {
+      padding: 6rem clamp(1.25rem, 6vw, 6rem);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 500;
+    }
+
+    .section-heading p {
+      margin: 1rem auto 0;
+      max-width: 670px;
+      font-family: Arial, Helvetica, sans-serif;
+      opacity: 0.85;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .collection-card {
+      min-height: 340px;
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      border: 1px solid rgba(213, 169, 79, 0.38);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.22);
+      text-decoration: none;
+      isolation: isolate;
+    }
+
+    .collection-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      transition: transform 400ms ease;
+    }
+
+    .collection-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(transparent 20%, rgba(2, 10, 12, 0.92));
+    }
+
+    .collection-card:hover::before {
+      transform: scale(1.05);
+    }
+
+    .underwater::before {
+      background:
+        radial-gradient(circle at 72% 28%, rgba(240, 213, 140, 0.7), transparent 8rem),
+        linear-gradient(145deg, #075c68, #132b5d 55%, #351b54);
+    }
+
+    .southwest::before {
+      background:
+        radial-gradient(circle at 50% 38%, #f6c96b, transparent 5rem),
+        linear-gradient(165deg, #963f49 0%, #cd794b 43%, #183d47 100%);
+    }
+
+    .celestial::before {
+      background:
+        radial-gradient(circle at 25% 24%, #f6d998, transparent 0.25rem),
+        radial-gradient(circle at 76% 35%, #f6d998, transparent 0.18rem),
+        radial-gradient(circle at 64% 70%, #f6d998, transparent 0.15rem),
+        linear-gradient(145deg, #11163e, #341e57 50%, #071f24);
+    }
+
+    .collection-card h3 {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .collection-card p {
+      margin: 0.5rem 0 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .about {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .portrait-placeholder {
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      border: 1px solid rgba(213, 169, 79, 0.4);
+      border-radius: 50% 50% 1rem 1rem;
+      color: var(--gold-light);
+      background:
+        radial-gradient(circle at 50% 30%, rgba(213, 169, 79, 0.25), transparent 10rem),
+        linear-gradient(160deg, var(--teal), #071619);
+      text-align: center;
+    }
+
+    .about h2 {
+      margin-top: 0;
+      color: var(--gold-light);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .about p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .collectors {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 4rem clamp(1.5rem, 5vw, 5rem);
+      border: 1px solid rgba(213, 169, 79, 0.42);
+      border-radius: 2rem;
+      background:
+        linear-gradient(135deg, rgba(143, 41, 68, 0.17), rgba(11, 75, 80, 0.32));
+      text-align: center;
+    }
+
+    .collectors h2 {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 500;
+    }
+
+    .collectors p {
+      max-width: 700px;
+      margin: 1rem auto 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      padding: 2rem 1.25rem;
+      border-top: 1px solid rgba(213, 169, 79, 0.28);
+      color: rgba(247, 240, 223, 0.75);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .collection-grid,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        gap: 2rem;
+      }
+
+      .portrait-placeholder {
+        max-width: 430px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .navigation {
+        gap: 0.8rem;
+      }
+
+      .navigation a {
+        font-size: 0.72rem;
+      }
+
+      .hero {
+        min-height: 82vh;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="site-header">
+    <a class="brand" href="#home">A Roses Art</a>
+
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#collectors">Collectors of Wonder</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
   <main>
-    <h1>A Roses Art</h1>
-    <h2>Ordinary Nature, Imagined Through a Magical Lens</h2>
-    <p>
-      A digital gallery where curiosity, craftsmanship, and imagination meet.
-      Every collection is an invitation to explore the extraordinary hidden
-      within the ordinary.
-    </p>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">The Fine Art of Alexandria Roses</p>
+
+        <h1>A Roses Art</h1>
+
+        <p class="artist-name">Alexandria Roses</p>
+
+        <p class="tagline">
+          Ordinary Nature, Imagined Through a Magical Lens
+        </p>
+
+        <p class="intro">
+          A Roses Art is the online gallery of Alexandria Roses, featuring
+          original artwork inspired by nature, imagination, discovery and the
+          extraordinary hidden within the ordinary.
+        </p>
+
+        <div class="button-row">
+          <a class="button" href="#gallery">Explore the Gallery</a>
+          <a class="button secondary" href="#about">Meet the Artist</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-heading">
+        <p class="eyebrow">Enter the Gallery</p>
+        <h2>Featured Collections</h2>
+        <p>
+          Explore imagined worlds shaped by the sea, the Southwest, the cosmos
+          and a lasting fascination with wonder.
+        </p>
+      </div>
+
+      <div class="collection-grid">
+        <a class="collection-card underwater" href="#" aria-label="Explore the Beneath the Surface collection">
+          <div>
+            <h3>Beneath the Surface</h3>
+            <p>Underwater stories, curious creatures and hidden treasures.</p>
+          </div>
+        </a>
+
+        <a class="collection-card southwest" href="#" aria-label="Explore the Southwest collection">
+          <div>
+            <h3>Southwestern Wonder</h3>
+            <p>Desert light, mountain silhouettes and magical horizons.</p>
+          </div>
+        </a>
+
+        <a class="collection-card celestial" href="#" aria-label="Explore the Celestial collection">
+          <div>
+            <h3>Celestial Dreams</h3>
+            <p>Space, spirit and imagination reaching beyond the familiar.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about">
+        <div class="portrait-placeholder">
+          Artist portrait or featured original artwork will be placed here.
+        </div>
+
+        <div>
+          <p class="eyebrow">Behind the Art</p>
+          <h2>Alexandria Roses</h2>
+
+          <p>
+            Alexandria Roses is the artist behind A Roses Art. Her work blends
+            color, curiosity and storytelling across underwater,
+            Southwestern, celestial and imaginative subjects.
+          </p>
+
+          <p>
+            Each collection begins with a sense of discovery: a familiar piece
+            of nature, an unexpected detail or an ordinary moment transformed
+            through a magical lens.
+          </p>
+
+          <a class="button secondary" href="#">Read the Artist Story</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collectors">
+      <div class="collectors">
+        <p class="eyebrow">An Invitation to Wonder</p>
+        <h2>Collectors of Wonder</h2>
+
+        <p>
+          Collectors of Wonder is for people who believe curiosity is worth
+          protecting, imagination is worth celebrating and wonder is worth
+          collecting.
+        </p>
+
+        <div class="button-row">
+          <a class="button" href="#" aria-label="Visit the Collectors of Wonder Etsy shop">
+            Shop on Etsy
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <p class="eyebrow">Stay Curious</p>
+        <h2>Contact A Roses Art</h2>
+
+        <p>
+          Collector inquiries, collaboration requests and licensing
+          opportunities are welcome.
+        </p>
+
+        <div class="button-row">
+          <a class="button secondary" href="mailto:hello@arosesart.com">
+            Email the Gallery
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    © 2026 A Roses Art · Original artwork by Alexandria Roses
+  </footer>
 </body>
 </html>
