@@ -8,20 +8,27 @@
 
   <meta
     name="description"
-    content="Explore A Roses Art, the online gallery of Alexandria Roses. Discover original underwater, Southwestern, celestial and imaginative artwork created through a magical lens."
+    content="A Roses Art is the online gallery of Alexandria Roses, featuring imaginative underwater, Southwestern, celestial and nature-inspired fine art."
   >
 
   <meta name="author" content="Alexandria Roses">
   <meta name="robots" content="index, follow">
+
   <link rel="canonical" href="https://arosesart.com/">
 
-  <meta property="og:title" content="A Roses Art | The Fine Art of Alexandria Roses">
+  <meta
+    property="og:title"
+    content="A Roses Art | Original Fine Art by Alexandria Roses"
+  >
+
   <meta
     property="og:description"
-    content="Original artwork inspired by nature, imagination and the extraordinary hidden within the ordinary."
+    content="Ordinary Nature, Imagined Through a Magical Lens."
   >
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arosesart.com/">
+  <meta property="og:image" content="https://arosesart.com/master-logo.png.png">
 
   <script type="application/ld+json">
   {
@@ -31,8 +38,8 @@
         "@type": "Person",
         "@id": "https://arosesart.com/#alexandria-roses",
         "name": "Alexandria Roses",
-        "url": "https://arosesart.com/",
         "jobTitle": "Artist",
+        "url": "https://arosesart.com/",
         "description": "Alexandria Roses is the artist behind A Roses Art."
       },
       {
@@ -42,14 +49,13 @@
         "url": "https://arosesart.com/",
         "founder": {
           "@id": "https://arosesart.com/#alexandria-roses"
-        },
-        "description": "The online fine-art gallery of Alexandria Roses."
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://arosesart.com/#website",
-        "url": "https://arosesart.com/",
         "name": "A Roses Art",
+        "url": "https://arosesart.com/",
         "publisher": {
           "@id": "https://arosesart.com/#organization"
         }
@@ -60,13 +66,18 @@
 
   <style>
     :root {
-      --teal-dark: #071f24;
-      --teal: #0b4b50;
-      --teal-light: #18777b;
-      --gold: #d5a94f;
-      --gold-light: #f0d58c;
-      --cream: #f7f0df;
-      --rose: #8f2944;
+      --black: #02090b;
+      --deep-teal: #041a1d;
+      --teal: #082d31;
+      --teal-light: #155a60;
+      --gold: #c99a3d;
+      --gold-bright: #f0d180;
+      --cream: #f4ead2;
+      --rose: #6d233a;
+      --wine: #32131f;
+      --line: rgba(201, 154, 61, 0.34);
+      --soft-line: rgba(201, 154, 61, 0.16);
+      --shadow: rgba(0, 0, 0, 0.5);
     }
 
     * {
@@ -75,145 +86,246 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
       margin: 0;
       color: var(--cream);
       background:
-        radial-gradient(circle at 50% 10%, rgba(24, 119, 123, 0.25), transparent 34rem),
-        linear-gradient(150deg, #031417 0%, var(--teal-dark) 48%, #020a0c 100%);
+        radial-gradient(
+          circle at 50% 8%,
+          rgba(21, 90, 96, 0.18),
+          transparent 38rem
+        ),
+        linear-gradient(
+          155deg,
+          #020b0d 0%,
+          var(--deep-teal) 48%,
+          #010607 100%
+        );
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     a {
       color: inherit;
     }
 
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
+      min-height: 82px;
       padding: 1rem clamp(1.25rem, 5vw, 5rem);
-      background: rgba(3, 20, 23, 0.92);
-      border-bottom: 1px solid rgba(213, 169, 79, 0.35);
-      backdrop-filter: blur(12px);
+      background: rgba(1, 12, 14, 0.93);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
     }
 
     .brand {
-      color: var(--gold-light);
-      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      color: var(--gold-bright);
+      font-size: clamp(1.3rem, 2.7vw, 2rem);
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.11em;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .navigation {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.35rem;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(0.8rem, 2vw, 1.7rem);
     }
 
     .navigation a {
-      color: var(--cream);
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
+      color: rgba(244, 234, 210, 0.92);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-decoration: none;
       text-transform: uppercase;
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
     }
 
     .navigation a:hover,
     .navigation a:focus-visible {
-      color: var(--gold-light);
+      color: var(--gold-bright);
+      transform: translateY(-1px);
     }
 
     .hero {
-      min-height: 88vh;
+      position: relative;
       display: grid;
       place-items: center;
-      padding: 4.5rem 2rem 5rem;
+      min-height: calc(100vh - 82px);
+      padding: clamp(3rem, 7vw, 6rem) 1.5rem;
+      overflow: hidden;
       text-align: center;
-      position: relative;
-      overflow: visible;
+      isolation: isolate;
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      width: min(52rem, 94vw);
-      height: min(52rem, 94vw);
-      border: 1px solid rgba(213, 169, 79, 0.14);
+      z-index: -3;
+      width: min(70rem, 105vw);
+      height: min(70rem, 105vw);
+      border: 1px solid rgba(201, 154, 61, 0.13);
       border-radius: 50%;
       box-shadow:
-        0 0 0 1.4rem rgba(213, 169, 79, 0.02),
-        0 0 9rem rgba(24, 119, 123, 0.1);
+        0 0 0 4rem rgba(201, 154, 61, 0.012),
+        0 0 0 9rem rgba(201, 154, 61, 0.008),
+        0 0 12rem rgba(21, 90, 96, 0.14);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 50% 27%,
+          rgba(215, 156, 52, 0.15),
+          transparent 21rem
+        ),
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(229, 183, 90, 0.09),
+          transparent 34rem
+        );
       pointer-events: none;
     }
 
     .hero-content {
-      max-width: 900px;
-      width: 100%;
+      width: min(100%, 950px);
       position: relative;
-      z-index: 1;
+      z-index: 2;
+    }
+
+    .logo-wrap {
+      position: relative;
+      width: min(620px, 88vw);
+      margin: 0 auto 1.1rem;
+    }
+
+    .logo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 4% 8%;
+      z-index: -1;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(216, 163, 64, 0.23),
+          rgba(216, 163, 64, 0.05) 44%,
+          transparent 72%
+        );
+      filter: blur(22px);
     }
 
     .hero-logo {
       display: block;
-      width: min(460px, 78vw);
+      width: 100%;
       height: auto;
-      margin: 0 auto 1.25rem;
-      border-radius: 50%;
+      margin: 0 auto;
       filter:
-        drop-shadow(0 1.5rem 2.8rem rgba(0, 0, 0, 0.34))
-        drop-shadow(0 0 1.25rem rgba(213, 169, 79, 0.12));
+        drop-shadow(0 2rem 3.5rem rgba(0, 0, 0, 0.48))
+        drop-shadow(0 0 1.6rem rgba(201, 154, 61, 0.12));
     }
 
     .eyebrow {
-      margin: 0 0 0.75rem;
+      margin: 0 0 0.55rem;
       color: var(--gold);
-      font-size: 0.85rem;
-      letter-spacing: 0.3em;
+      font-size: clamp(0.7rem, 1.4vw, 0.88rem);
+      font-weight: 600;
+      letter-spacing: 0.34em;
       text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      color: var(--gold-light);
-      font-size: clamp(4rem, 10vw, 7.5rem);
+      color: var(--gold-bright);
+      font-size: clamp(3.6rem, 10vw, 7.9rem);
       font-weight: 500;
-      line-height: 0.95;
+      letter-spacing: 0.015em;
+      line-height: 0.92;
       text-shadow:
-        0 0.35rem 1.5rem rgba(0, 0, 0, 0.25),
-        0 0 0.8rem rgba(240, 213, 140, 0.12);
+        0 0.35rem 1.8rem rgba(0, 0, 0, 0.44),
+        0 0 1rem rgba(240, 209, 128, 0.08);
     }
 
-    .artist-name {
-      margin: 1.4rem 0 0;
-      color: var(--cream);
-      font-size: clamp(1.15rem, 3vw, 1.8rem);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      width: min(430px, 80%);
+      margin: 1.15rem auto;
+      color: var(--gold);
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 154, 61, 0.65)
+        );
+    }
+
+    .ornament::after {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(201, 154, 61, 0.65),
+          transparent
+        );
+    }
+
+    .ornament-symbol {
+      font-size: 1.1rem;
     }
 
     .tagline {
-      margin: 1.75rem auto 0;
-      max-width: 720px;
-      color: var(--gold-light);
-      font-size: clamp(1.3rem, 3vw, 2rem);
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--gold-bright);
+      font-size: clamp(1.4rem, 3.3vw, 2.2rem);
       font-style: italic;
+      line-height: 1.25;
     }
 
     .intro {
-      max-width: 720px;
-      margin: 1.5rem auto 0;
+      max-width: 710px;
+      margin: 1.2rem auto 0;
+      color: rgba(244, 234, 210, 0.86);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.05rem;
-      opacity: 0.9;
+      font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+      line-height: 1.75;
     }
 
     .button-row {
@@ -221,141 +333,268 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
     }
 
     .button {
-      display: inline-block;
-      min-width: 11rem;
-      padding: 0.9rem 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 12.5rem;
+      padding: 0.95rem 1.5rem;
       border: 1px solid var(--gold);
-      border-radius: 999px;
-      color: var(--teal-dark);
-      background: var(--gold-light);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
+      border-radius: 0.35rem;
+      color: #061417;
+      background:
+        linear-gradient(
+          180deg,
+          #f3d98d,
+          #c99a3d
+        );
+      box-shadow:
+        0 0.7rem 1.6rem rgba(0, 0, 0, 0.22),
+        inset 0 1px rgba(255, 255, 255, 0.35);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       text-decoration: none;
       text-transform: uppercase;
-      transition: transform 160ms ease, background 160ms ease;
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
     }
 
     .button.secondary {
-      color: var(--gold-light);
-      background: transparent;
+      color: var(--gold-bright);
+      background: rgba(3, 18, 21, 0.44);
+      box-shadow: none;
     }
 
     .button:hover,
     .button:focus-visible {
-      transform: translateY(-2px);
-      background: var(--cream);
+      transform: translateY(-3px);
+      box-shadow:
+        0 1rem 2rem rgba(0, 0, 0, 0.34),
+        0 0 1rem rgba(201, 154, 61, 0.1);
     }
 
     .section {
-      padding: 6rem clamp(1.25rem, 6vw, 6rem);
+      position: relative;
+      padding:
+        clamp(4.5rem, 8vw, 7rem)
+        clamp(1.25rem, 6vw, 6rem);
+      border-top: 1px solid var(--soft-line);
     }
 
     .section-heading {
       max-width: 760px;
-      margin: 0 auto 3rem;
+      margin: 0 auto 3.2rem;
       text-align: center;
     }
 
     .section-heading h2 {
       margin: 0;
-      color: var(--gold-light);
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--cream);
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
       font-weight: 500;
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+      text-transform: uppercase;
     }
 
     .section-heading p {
-      margin: 1rem auto 0;
       max-width: 670px;
+      margin: 0.9rem auto 0;
+      color: rgba(244, 234, 210, 0.75);
       font-family: Arial, Helvetica, sans-serif;
-      opacity: 0.85;
+      font-size: 1rem;
     }
 
     .collection-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
+      gap: 1.35rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .collection-card {
-      min-height: 340px;
+      min-height: 420px;
       display: flex;
-      align-items: flex-end;
-      padding: 2rem;
-      border: 1px solid rgba(213, 169, 79, 0.38);
-      border-radius: 1.25rem;
-      overflow: hidden;
+      flex-direction: column;
+      justify-content: flex-end;
       position: relative;
-      box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+      border: 1px solid rgba(201, 154, 61, 0.52);
+      border-radius: 1rem;
+      background: #031113;
+      box-shadow: 0 1.6rem 3rem rgba(0, 0, 0, 0.26);
       text-decoration: none;
       isolation: isolate;
+      transition:
+        transform 240ms ease,
+        box-shadow 240ms ease;
     }
 
     .collection-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: -2;
-      transition: transform 400ms ease;
+      z-index: -3;
+      background-size: cover;
+      background-position: center;
+      transition: transform 500ms ease;
     }
 
     .collection-card::after {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: -1;
-      background: linear-gradient(transparent 20%, rgba(2, 10, 12, 0.92));
+      z-index: -2;
+      background:
+        linear-gradient(
+          180deg,
+          transparent 20%,
+          rgba(2, 11, 13, 0.2) 45%,
+          rgba(2, 11, 13, 0.96) 76%
+        );
     }
 
-    .collection-card:hover::before {
-      transform: scale(1.05);
+    .collection-card:hover,
+    .collection-card:focus-visible {
+      transform: translateY(-7px);
+      box-shadow:
+        0 2rem 4rem rgba(0, 0, 0, 0.4),
+        0 0 1.2rem rgba(201, 154, 61, 0.08);
+    }
+
+    .collection-card:hover::before,
+    .collection-card:focus-visible::before {
+      transform: scale(1.06);
     }
 
     .underwater::before {
       background:
-        radial-gradient(circle at 72% 28%, rgba(240, 213, 140, 0.7), transparent 8rem),
-        linear-gradient(145deg, #075c68, #132b5d 55%, #351b54);
+        radial-gradient(
+          circle at 65% 25%,
+          rgba(65, 181, 188, 0.42),
+          transparent 9rem
+        ),
+        radial-gradient(
+          circle at 35% 60%,
+          rgba(22, 80, 111, 0.62),
+          transparent 12rem
+        ),
+        linear-gradient(
+          145deg,
+          #075c68,
+          #102e56 56%,
+          #201335
+        );
     }
 
     .southwest::before {
       background:
-        radial-gradient(circle at 50% 38%, #f6c96b, transparent 5rem),
-        linear-gradient(165deg, #963f49 0%, #cd794b 43%, #183d47 100%);
+        radial-gradient(
+          circle at 50% 34%,
+          rgba(255, 217, 119, 0.86),
+          transparent 5rem
+        ),
+        linear-gradient(
+          165deg,
+          #9f3e46 0%,
+          #d07a43 42%,
+          #183a41 100%
+        );
     }
 
     .celestial::before {
       background:
-        radial-gradient(circle at 25% 24%, #f6d998, transparent 0.25rem),
-        radial-gradient(circle at 76% 35%, #f6d998, transparent 0.18rem),
-        radial-gradient(circle at 64% 70%, #f6d998, transparent 0.15rem),
-        linear-gradient(145deg, #11163e, #341e57 50%, #071f24);
+        radial-gradient(
+          circle at 54% 43%,
+          rgba(142, 126, 255, 0.24),
+          transparent 8rem
+        ),
+        radial-gradient(
+          circle at 25% 24%,
+          #f6d998,
+          transparent 0.2rem
+        ),
+        radial-gradient(
+          circle at 76% 35%,
+          #f6d998,
+          transparent 0.14rem
+        ),
+        radial-gradient(
+          circle at 64% 70%,
+          #f6d998,
+          transparent 0.12rem
+        ),
+        linear-gradient(
+          145deg,
+          #0d1437,
+          #2c1b4c 50%,
+          #061b20
+        );
     }
 
-    .collection-card h3 {
+    .card-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem 1.8rem 1.8rem;
+      text-align: center;
+    }
+
+    .card-content h3 {
       margin: 0;
-      color: var(--gold-light);
-      font-size: 2rem;
+      color: var(--gold-bright);
+      font-size: 1.45rem;
       font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .collection-card p {
-      margin: 0.5rem 0 0;
+    .card-content p {
+      margin: 0.7rem 0 0;
+      color: rgba(244, 234, 210, 0.82);
       font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .about-section {
+      overflow: hidden;
+    }
+
+    .about-section::after {
+      content: "❧";
+      position: absolute;
+      right: 5%;
+      bottom: 4%;
+      color: rgba(201, 154, 61, 0.07);
+      font-size: clamp(8rem, 20vw, 18rem);
+      line-height: 1;
+      pointer-events: none;
     }
 
     .about {
-      max-width: 1050px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 4rem;
+      grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+      gap: clamp(2.5rem, 7vw, 5rem);
       align-items: center;
     }
 
@@ -363,101 +602,266 @@
       aspect-ratio: 4 / 5;
       display: grid;
       place-items: center;
-      padding: 2rem;
-      border: 1px solid rgba(213, 169, 79, 0.4);
-      border-radius: 50% 50% 1rem 1rem;
-      color: var(--gold-light);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(201, 154, 61, 0.48);
+      border-radius: 50% 50% 1.2rem 1.2rem;
       background:
-        radial-gradient(circle at 50% 30%, rgba(213, 169, 79, 0.25), transparent 10rem),
-        linear-gradient(160deg, var(--teal), #071619);
+        radial-gradient(
+          circle at 50% 24%,
+          rgba(224, 175, 78, 0.28),
+          transparent 10rem
+        ),
+        linear-gradient(
+          160deg,
+          #10474d,
+          #061518
+        );
+      box-shadow:
+        0 1.5rem 3rem rgba(0, 0, 0, 0.32),
+        inset 0 0 3rem rgba(201, 154, 61, 0.08);
+      color: rgba(240, 209, 128, 0.82);
+      padding: 2rem;
       text-align: center;
     }
 
-    .about h2 {
-      margin-top: 0;
-      color: var(--gold-light);
-      font-size: clamp(2.2rem, 5vw, 4rem);
+    .portrait-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border: 1px solid rgba(201, 154, 61, 0.18);
+      border-radius: 50% 50% 0.8rem 0.8rem;
+    }
+
+    .about-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-copy h2 {
+      margin: 0;
+      color: var(--cream);
+      font-size: clamp(2.3rem, 5vw, 4rem);
       font-weight: 500;
+      letter-spacing: 0.06em;
       line-height: 1.1;
     }
 
-    .about p {
+    .about-copy p {
+      color: rgba(244, 234, 210, 0.8);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .collectors-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(67, 18, 34, 0.84),
+          rgba(24, 10, 17, 0.94)
+        );
     }
 
     .collectors {
-      max-width: 950px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 4rem clamp(1.5rem, 5vw, 5rem);
-      border: 1px solid rgba(213, 169, 79, 0.42);
-      border-radius: 2rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 2.2rem clamp(1.4rem, 4vw, 3rem);
+      border: 1px solid rgba(201, 154, 61, 0.44);
+      border-radius: 0.8rem;
       background:
-        linear-gradient(135deg, rgba(143, 41, 68, 0.17), rgba(11, 75, 80, 0.32));
-      text-align: center;
+        radial-gradient(
+          circle at 15% 50%,
+          rgba(201, 154, 61, 0.1),
+          transparent 16rem
+        ),
+        rgba(28, 9, 16, 0.45);
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.22);
     }
 
-    .collectors h2 {
+    .seal {
+      width: 100px;
+      height: 100px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold-bright);
+      font-size: 2.7rem;
+      box-shadow:
+        inset 0 0 1.5rem rgba(201, 154, 61, 0.08),
+        0 0 1.5rem rgba(201, 154, 61, 0.06);
+    }
+
+    .collectors-copy h2 {
       margin: 0;
-      color: var(--gold-light);
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--cream);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 500;
+      letter-spacing: 0.06em;
     }
 
-    .collectors p {
-      max-width: 700px;
-      margin: 1rem auto 0;
+    .collectors-copy p {
+      margin: 0.6rem 0 0;
+      color: rgba(244, 234, 210, 0.78);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.05rem;
+    }
+
+    .contact-section {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .contact {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .contact-icon {
+      width: 86px;
+      height: 86px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201, 154, 61, 0.52);
+      border-radius: 50%;
+      color: var(--gold-bright);
+      font-size: 2rem;
+    }
+
+    .contact-copy h2 {
+      margin: 0;
+      color: var(--cream);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    .contact-copy p {
+      margin: 0.55rem 0 0;
+      color: rgba(244, 234, 210, 0.75);
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     footer {
-      padding: 2rem 1.25rem;
-      border-top: 1px solid rgba(213, 169, 79, 0.28);
-      color: rgba(247, 240, 223, 0.75);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.4rem clamp(1.25rem, 5vw, 5rem);
+      border-top: 1px solid var(--line);
+      color: rgba(240, 209, 128, 0.72);
+      background: rgba(1, 8, 9, 0.9);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9rem;
-      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
     }
 
-    @media (max-width: 850px) {
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: var(--gold);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
       .site-header {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .collection-grid,
-      .about {
+      .navigation {
+        justify-content: flex-start;
+      }
+
+      .collection-grid {
         grid-template-columns: 1fr;
       }
 
-      .about {
-        gap: 2rem;
+      .collection-card {
+        min-height: 380px;
+      }
+
+      .about,
+      .collectors,
+      .contact {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
 
       .portrait-placeholder {
-        max-width: 430px;
-        width: 100%;
+        width: min(430px, 100%);
         margin: 0 auto;
+      }
+
+      .seal,
+      .contact-icon {
+        margin: 0 auto;
+      }
+
+      .collectors .button,
+      .contact .button {
+        justify-self: center;
       }
     }
 
     @media (max-width: 560px) {
+      html {
+        scroll-padding-top: 125px;
+      }
+
+      .site-header {
+        gap: 0.7rem;
+        min-height: auto;
+      }
+
       .navigation {
-        gap: 0.8rem;
+        gap: 0.65rem 0.9rem;
       }
 
       .navigation a {
-        font-size: 0.72rem;
+        font-size: 0.67rem;
       }
 
       .hero {
         min-height: auto;
-        padding-top: 3rem;
+        padding-top: 2.6rem;
       }
 
-      .hero-logo {
-        width: min(360px, 86vw);
+      .logo-wrap {
+        width: min(520px, 96vw);
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 17vw, 5rem);
+      }
+
+      .section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .collection-card {
+        min-height: 330px;
+      }
+
+      footer {
+        justify-content: center;
+        text-align: center;
       }
     }
   </style>
@@ -478,26 +882,32 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-content">
-        <img
-          src="master-logo.png"
-          alt="A Roses Art emblem featuring a Southwestern sunrise, compass, roses, and art tools"
-          class="hero-logo"
-        >
 
-        <p class="eyebrow">The Fine Art of Alexandria Roses</p>
+        <div class="logo-wrap">
+          <img
+            src="master-logo.png.png"
+            alt="A Roses Art emblem with a Southwestern sunrise, compass, roses and art tools"
+            class="hero-logo"
+          >
+        </div>
+
+        <p class="eyebrow">Original Fine Art by Alexandria Roses</p>
 
         <h1>A Roses Art</h1>
 
-        <p class="artist-name">Alexandria Roses</p>
+        <div class="ornament" aria-hidden="true">
+          <span class="ornament-symbol">❧</span>
+        </div>
 
         <p class="tagline">
-          Ordinary Nature, Imagined Through a Magical Lens
+          Ordinary Nature,<br>
+          Imagined Through a Magical Lens
         </p>
 
         <p class="intro">
-          A Roses Art is the online gallery of Alexandria Roses, featuring
-          original artwork inspired by nature, imagination, discovery and the
-          extraordinary hidden within the ordinary.
+          A digital gallery of original artwork inspired by nature,
+          imagination, discovery and the extraordinary hidden within
+          the ordinary.
         </p>
 
         <div class="button-row">
@@ -511,103 +921,172 @@
       <div class="section-heading">
         <p class="eyebrow">Enter the Gallery</p>
         <h2>Featured Collections</h2>
+
         <p>
-          Explore imagined worlds shaped by the sea, the Southwest, the cosmos
-          and a lasting fascination with wonder.
+          Explore imagined worlds shaped by the sea, the Southwest,
+          the cosmos and a lasting fascination with wonder.
         </p>
       </div>
 
       <div class="collection-grid">
-        <a class="collection-card underwater" href="#" aria-label="Explore the Beneath the Surface collection">
-          <div>
+
+        <a
+          class="collection-card underwater"
+          href="#"
+          aria-label="Explore Beneath the Surface"
+        >
+          <div class="card-content">
             <h3>Beneath the Surface</h3>
-            <p>Underwater stories, curious creatures and hidden treasures.</p>
+
+            <p>
+              Underwater stories, curious creatures and hidden treasures.
+            </p>
+
+            <span class="card-link">
+              Explore Collection →
+            </span>
           </div>
         </a>
 
-        <a class="collection-card southwest" href="#" aria-label="Explore the Southwest collection">
-          <div>
+        <a
+          class="collection-card southwest"
+          href="#"
+          aria-label="Explore Southwestern Wonder"
+        >
+          <div class="card-content">
             <h3>Southwestern Wonder</h3>
-            <p>Desert light, mountain silhouettes and magical horizons.</p>
+
+            <p>
+              Desert light, mountain silhouettes and magical horizons.
+            </p>
+
+            <span class="card-link">
+              Explore Collection →
+            </span>
           </div>
         </a>
 
-        <a class="collection-card celestial" href="#" aria-label="Explore the Celestial collection">
-          <div>
+        <a
+          class="collection-card celestial"
+          href="#"
+          aria-label="Explore Celestial Dreams"
+        >
+          <div class="card-content">
             <h3>Celestial Dreams</h3>
-            <p>Space, spirit and imagination reaching beyond the familiar.</p>
+
+            <p>
+              Space, spirit and imagination reaching beyond the familiar.
+            </p>
+
+            <span class="card-link">
+              Explore Collection →
+            </span>
           </div>
         </a>
+
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section about-section" id="about">
       <div class="about">
+
         <div class="portrait-placeholder">
-          Artist portrait or featured original artwork will be placed here.
+          Artist portrait or featured original artwork will appear here.
         </div>
 
-        <div>
+        <div class="about-copy">
           <p class="eyebrow">Behind the Art</p>
+
           <h2>Alexandria Roses</h2>
 
           <p>
-            Alexandria Roses is the artist behind A Roses Art. Her work blends
-            color, curiosity and storytelling across underwater,
+            Alexandria Roses is the artist behind A Roses Art. Her work
+            blends color, curiosity and storytelling across underwater,
             Southwestern, celestial and imaginative subjects.
           </p>
 
           <p>
-            Each collection begins with a sense of discovery: a familiar piece
-            of nature, an unexpected detail or an ordinary moment transformed
-            through a magical lens.
+            Each collection begins with a sense of discovery: a familiar
+            piece of nature, an unexpected detail or an ordinary moment
+            transformed through a magical lens.
           </p>
 
-          <a class="button secondary" href="#">Read the Artist Story</a>
+          <a class="button secondary" href="#">
+            Read the Artist Story
+          </a>
         </div>
+
       </div>
     </section>
 
-    <section class="section" id="collectors">
+    <section class="section collectors-section" id="collectors">
       <div class="collectors">
-        <p class="eyebrow">An Invitation to Wonder</p>
-        <h2>Collectors of Wonder</h2>
 
-        <p>
-          Collectors of Wonder is for people who believe curiosity is worth
-          protecting, imagination is worth celebrating and wonder is worth
-          collecting.
-        </p>
-
-        <div class="button-row">
-          <a class="button" href="#" aria-label="Visit the Collectors of Wonder Etsy shop">
-            Shop on Etsy
-          </a>
+        <div class="seal" aria-hidden="true">
+          ⚿
         </div>
+
+        <div class="collectors-copy">
+          <p class="eyebrow">An Invitation to Wonder</p>
+
+          <h2>Collectors of Wonder</h2>
+
+          <p>
+            For people who believe curiosity is worth protecting,
+            imagination is worth celebrating and wonder is worth collecting.
+          </p>
+        </div>
+
+        <a
+          class="button"
+          href="#"
+          aria-label="Visit the Collectors of Wonder Etsy shop"
+        >
+          Shop on Etsy
+        </a>
+
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="section-heading">
-        <p class="eyebrow">Stay Curious</p>
-        <h2>Contact A Roses Art</h2>
+    <section class="section contact-section" id="contact">
+      <div class="contact">
 
-        <p>
-          Collector inquiries, collaboration requests and licensing
-          opportunities are welcome.
-        </p>
-
-        <div class="button-row">
-          <a class="button secondary" href="mailto:hello@arosesart.com">
-            Email the Gallery
-          </a>
+        <div class="contact-icon" aria-hidden="true">
+          ✉
         </div>
+
+        <div class="contact-copy">
+          <p class="eyebrow">Stay Curious</p>
+
+          <h2>Contact A Roses Art</h2>
+
+          <p>
+            Collector inquiries, collaboration requests and licensing
+            opportunities are welcome.
+          </p>
+        </div>
+
+        <a
+          class="button secondary"
+          href="mailto:hello@arosesart.com"
+        >
+          Email the Gallery
+        </a>
+
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 A Roses Art · Original artwork by Alexandria Roses
+    <span>
+      © 2026 A Roses Art · Original artwork by Alexandria Roses
+    </span>
+
+    <div class="social-links" aria-label="Social links">
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="Pinterest">◉</a>
+      <a href="mailto:hello@arosesart.com" aria-label="Email">✉</a>
+    </div>
   </footer>
 </body>
 </html>
